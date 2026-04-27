@@ -25,7 +25,9 @@
 # Global
 git config --global user.name "Your Name"
 ```
+```
 git config --global user.email "you@example.com"
+```
 ```
 # Per-repo
 git config user.name "Local Name"
@@ -67,10 +69,20 @@ git config user.name "Local Name"
 ```bash
 # Fork workflow
 git remote add origin git@github.com:<you>/<repo>.git
+```
+```
 git remote add upstream git@github.com:<upstream-owner>/<repo>.git
+```
+```
 git fetch upstream
+```
+```
 git checkout main
+```
+```
 git merge upstream/main
+```
+```
 git push origin main
 ```
 
@@ -97,9 +109,17 @@ git push origin main
 ### Useful Commands
 ```bash
 git remote add origin git@gitlab.com:<you>/<project>.git
+```
+```
 git remote add upstream git@gitlab.com:<upstream>/<project>.git
+```
+```
 git fetch upstream
+```
+```
 git checkout -b feature/my-feature
+```
+```
 git push -u origin feature/my-feature
 ```
 
@@ -126,24 +146,40 @@ git push -u origin feature/my-feature
 ### Keep a fork up-to-date (both platforms)
 ```bash
 git fetch upstream
+```
+```
 git checkout main
+```
+```
 git merge upstream/main
+```
+```
 git push origin main
 ```
 
 ### Create PR/MR from feature branch
 ```bash
 git checkout -b feature/xyz
+```
+```
 # make changes
 git add -A
+```
+```
 git commit -m "Add xyz"
+```
+```
 git push -u origin feature/xyz
+```
+```
 # Open PR (GitHub) or MR (GitLab) in web UI
 ```
 
 ### Squash before merging
 ```bash
 git rebase -i HEAD~3
+```
+```
 # mark commits as squash/fixup
 git push -f origin feature/branch
 ```
