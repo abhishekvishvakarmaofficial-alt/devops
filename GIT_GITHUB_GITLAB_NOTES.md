@@ -24,7 +24,9 @@
 ```bash
 # Global
 git config --global user.name "Your Name"
+```
 git config --global user.email "you@example.com"
+```
 # Per-repo
 git config user.name "Local Name"
 ```
