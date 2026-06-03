@@ -1,0 +1,29 @@
+terraform-vpc/
+│
+├── main.tf
+├── provider.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+│
+├── vpc.tf
+├── subnet.tf
+├── igw.tf
+├── nat.tf
+├── route-table.tf
+├── security-group.tf
+│
+└── README.md
+
+
+
+VPC 10.0.0.0/16
+│
+├── Public Subnet (10.0.1.0/24)
+│     ├── Internet Gateway
+│     ├── NAT Gateway
+│     └── EC2 / ALB / Bastion
+│
+└── Private Subnet (10.0.2.0/24)
+      ├── App Servers
+      └── Databases / EKS Workers
