@@ -1,5 +1,5 @@
 output "vpc_id" {
-  value = aws_vpc.deep_vpc.id
+  value = aws_vpc.abhi_vpc.id
 }
 
 output "public_subnet_id" {

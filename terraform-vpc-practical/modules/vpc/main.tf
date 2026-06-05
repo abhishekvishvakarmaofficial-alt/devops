@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
 
 # VPC
-resource "aws_vpc" "deep_vpc" {
+resource "aws_vpc" "abhi_vpc" {
   cidr_block           = var.cidr_block
   enable_dns_hostnames = true
 
@@ -14,7 +14,7 @@ resource "aws_vpc" "deep_vpc" {
 
 # Public Subnet
 resource "aws_subnet" "public" {
-  vpc_id                  = aws_vpc.deep_vpc.id
+  vpc_id                  = aws_vpc.abhi_vpc.id
   cidr_block              = var.public_cidr_block
   map_public_ip_on_launch = true
 
@@ -25,7 +25,7 @@ resource "aws_subnet" "public" {
 
 # Private Subnet
 resource "aws_subnet" "private" {
-  vpc_id                  = aws_vpc.deep_vpc.id
+  vpc_id                  = aws_vpc.abhi_vpc.id
   cidr_block              = var.private_cidr_block
   map_public_ip_on_launch = false
 
@@ -36,7 +36,7 @@ resource "aws_subnet" "private" {
 
 # Internet Gateway
 resource "aws_internet_gateway" "my_igw" {
-  vpc_id = aws_vpc.deep_vpc.id
+  vpc_id = aws_vpc.abhi_vpc.id
 
   tags = {
     Name = "terraform-igw"
@@ -46,7 +46,7 @@ resource "aws_internet_gateway" "my_igw" {
 # Public Route Table
 # FIX #1: public subnet must route through IGW, not NAT Gateway
 resource "aws_route_table" "public_rt" {
-  vpc_id = aws_vpc.deep_vpc.id
+  vpc_id = aws_vpc.abhi_vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
